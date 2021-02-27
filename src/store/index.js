@@ -1,35 +1,70 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-// Register Vuex
 Vue.use(Vuex)
 
-// Vuex Store
+const LAYOUTS = new Set(['rootLayout', 'rootLayout', 'rootLayout'])
+
 export default new Vuex.Store({
   state: {
-    // Default layout options
-    layout: {
-      header: true,
-      sidebar: true,
-      sideOverlay: true,
-      footer: true
+    activeLayout: {
+      name: 'rootLayout'
     },
 
-    // users
-    users: {
-      selectedUser: {}
+    rootLayout: {
+      drawer: true,
+      header: true,
+      footer: true,
+
+      drawerIsOpen: true
+    },
+
+    blogLayout: {
+      drawer: true,
+      header: true,
+      footer: true,
+
+      drawerIsOpen: true
+    },
+
+    palandasinLayout: {
+      drawer: true,
+      header: true,
+      footer: true,
+
+      drawerIsOpen: true
     }
   },
+
   getters: {
-    // get selected user
-    selectedUser: (state) => {
-      return state.users.selectedUser
+    layout: (state) => {
+      let active = state[state.activeLayout.name]
+      return active? active: null
     }
   },
+
   mutations: {
-    // set selected user
-    setSelectedUser (state, payload) {
-      state.users.selectedUser = payload.user
+    setActiveLayout(state, payload) {
+      if (LAYOUTS.has(payload)) {
+        state.activeLayout.name = payload
+      }
+    },
+
+    setlayout(state, payload) {
+      if (state.activeLayout.name && state[state.activeLayout.name]) {
+        state[state.activeLayout.name].drawer = Boolean(payload.drawer)
+        state[state.activeLayout.name].header = Boolean(payload.header)
+        state[state.activeLayout.name].footer = Boolean(payload.footer)
+      }
+    },
+
+    setDrawer(state, payload) {
+      state[state.activeLayout.name].drawerIsOpen = Boolean(payload)
+    },
+
+    toggleDrawer(state) {
+      state[state.activeLayout.name]
+        .drawerIsOpen = !state[state.activeLayout.name].drawerIsOpen
     }
-  }
+  },
 })
