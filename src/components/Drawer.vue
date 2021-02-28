@@ -3,12 +3,12 @@
     <md-app>
       <md-app-drawer :md-active.sync="menuVisible" md-persistent="mini">
         <md-toolbar class="md-transparent" md-elevation="0">
-          <span>Navigation</span>
+          <!-- <span v-if="menuVisible">Opt Nav Title</span> -->
 
           <div class="md-toolbar-section-end">
-            <!-- <span>Navigation</span> -->
             <md-button class="md-icon-button md-dense" @click="toggleMenu">
-              <md-icon>keyboard_arrow_left</md-icon>
+              <md-icon v-if="menuVisible">keyboard_arrow_left</md-icon>
+              <md-icon v-else>keyboard_arrow_right</md-icon>
             </md-button>
           </div>
         </md-toolbar>
@@ -60,9 +60,14 @@ export default {
     position: absolute;
     top: 0px;
     min-height: 100%;
-    // width: 100px;
-    // min-height: 350px;
-    // border: 1px solid rgba(#000, .12);
+  }
+
+  .md-drawer.md-persistent-mini:not(.md-active) .md-toolbar {
+    display: inline-block;
+  }
+
+  .md-drawer.md-persistent-mini {
+    transform: translate3D(0,0,0);
   }
 
    // Demo purposes only
