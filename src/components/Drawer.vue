@@ -3,8 +3,12 @@
     <md-app>
       <md-app-drawer :md-active.sync="menuVisible" md-persistent="mini">
         <md-toolbar class="md-transparent" md-elevation="0">
-          <!-- <span v-if="menuVisible">Opt Nav Title</span> -->
+          <!-- optional navigation header -->
+          <span
+            v-if="menuVisible"
+            class="nav-header">{{ navTitle }}</span>
 
+          <!-- toggle -->
           <div class="md-toolbar-section-end">
             <md-button class="md-icon-button md-dense" @click="toggleMenu">
               <md-icon v-if="menuVisible">keyboard_arrow_left</md-icon>
@@ -12,28 +16,34 @@
             </md-button>
           </div>
         </md-toolbar>
-        
 
         <md-list>
-          <md-list-item>
-            <md-icon>move_to_inbox</md-icon>
-            <span class="md-list-item-text">Inbox</span>
-          </md-list-item>
+          <!-- loop all navifations list -->
+          <template
+            v-for="(item, index) in navigations">
 
-          <md-list-item>
-            <md-icon>send</md-icon>
-            <span class="md-list-item-text">Sent Mail</span>
-          </md-list-item>
+            <!-- if item is navifation title -->
+            <template v-if="item.type == 'navTitle'">
+              <md-divider :key="index + '_navDivider'"></md-divider>
+              <md-list-item
+                disabled
+                :key="index + '_navItem'">
+                <md-icon>{{ item.icon }}</md-icon>
+                <span class="md-list-item-text">{{ item.label }} Group</span>
+              </md-list-item>
+            </template>
 
-          <md-list-item>
-            <md-icon>delete</md-icon>
-            <span class="md-list-item-text">Trash</span>
-          </md-list-item>
+            <!-- if item is navigation -->
+            <template v-else>
+              <md-list-item
+                :to="item.route"
+                :key="index + '_navItem'">
+                <md-icon>{{ item.icon }}</md-icon>
+                <span class="md-list-item-text">{{ item.label }}</span>
+              </md-list-item>
+            </template>
+          </template>
 
-          <md-list-item>
-            <md-icon>error</md-icon>
-            <span class="md-list-item-text">Spam</span>
-          </md-list-item>
         </md-list>
       </md-app-drawer>
     </md-app>
@@ -45,13 +55,56 @@ export default {
   name: 'Drawer',
   props: [],
   data: () => ({
-      menuVisible: false
-    }),
-    methods: {
-      toggleMenu () {
-        this.menuVisible = !this.menuVisible
-      }
+      menuVisible: false,
+      navTitle: 'navigation',
+      navigations: [
+        {
+          type: 'navTitle',
+          label: 'Main Menu',
+          icon: 'menu'
+        },
+        {
+          type: 'navItem',
+          label: 'route 1',
+          icon: 'move_to_inbox',
+          route: '/'
+        },
+        {
+          type: 'navItem',
+          label: 'route 2',
+          icon: 'move_to_inbox',
+          route: '/'
+        },
+        {
+          type: 'navItem',
+          label: 'route 3',
+          icon: 'send',
+          route: '/'
+        },
+        {
+          type: 'navTitle',
+          label: 'Secondary Menu',
+          icon: 'menu'
+        },
+        {
+          type: 'navItem',
+          label: 'route A1',
+          icon: 'send',
+          route: '/'
+        },
+        {
+          type: 'navItem',
+          label: 'route A2',
+          icon: 'delete',
+          route: '/'
+        }
+      ],
+  }),
+  methods: {
+    toggleMenu () {
+      this.menuVisible = !this.menuVisible
     }
+  }
 }
 </script>
 
@@ -62,8 +115,14 @@ export default {
     min-height: 100%;
   }
 
+  .nav-header {
+    position: absolute;
+    min-width: 0px;
+    overflow: hidden;
+  }
+
   .md-drawer.md-persistent-mini:not(.md-active) .md-toolbar {
-    display: inline-block;
+    display: flex;
   }
 
   .md-drawer.md-persistent-mini {
