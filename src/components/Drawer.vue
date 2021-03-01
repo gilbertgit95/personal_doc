@@ -68,7 +68,7 @@ export default {
         {
           type: 'navItem',
           label: 'Resume',
-          icon: 'file_present',
+          icon: 'text_snippet',
           route: '/'
         },
         {
@@ -85,14 +85,14 @@ export default {
         },
         {
           type: 'navItem',
-          label: 'Aquarium',
-          icon: 'auto_awesome',
+          label: 'Pets',
+          icon: 'pets',
           route: '/'
         },
         {
           type: 'navItem',
           label: '3D Printing',
-          icon: 'print',
+          icon: 'auto_awesome',
           route: '/'
         },
         {
@@ -159,7 +159,7 @@ export default {
   }
 
   .md-list-item-text {
-    color: gray;
+    color: #000;
   }
 
   .nav-header {
