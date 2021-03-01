@@ -2,7 +2,7 @@
   <div class="drawer-wrapper">
     <md-app>
       <md-app-drawer :md-active.sync="menuVisible" md-persistent="mini">
-        <md-toolbar class="md-transparent" md-elevation="0">
+        <md-toolbar class="md-transparent drawer-header" md-elevation="0">
           <!-- optional navigation header -->
           <span
             v-if="menuVisible"
@@ -11,8 +11,8 @@
           <!-- toggle -->
           <div class="md-toolbar-section-end">
             <md-button class="md-icon-button md-dense" @click="toggleMenu">
-              <md-icon v-if="menuVisible">keyboard_arrow_left</md-icon>
-              <md-icon v-else>keyboard_arrow_right</md-icon>
+              <md-icon class="drawer-header-icon" v-if="menuVisible">keyboard_arrow_left</md-icon>
+              <md-icon class="drawer-header-icon" v-else>keyboard_arrow_right</md-icon>
             </md-button>
           </div>
         </md-toolbar>
@@ -133,6 +133,17 @@ export default {
     position: absolute;
     top: 0px;
     min-height: 100%;
+  }
+
+  .md-app-side-drawer {
+    box-shadow: 2px 0px 7px 3px rgb(0 0 0 / 13%)!important;
+    .drawer-header {
+      background: #4a5573;
+      color: #fff;
+      .drawer-header-icon {
+        color: #fff;
+      }
+    }
   }
 
   .list-item-title {
