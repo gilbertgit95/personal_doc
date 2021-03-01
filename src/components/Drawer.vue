@@ -63,41 +63,59 @@ export default {
         {
           type: 'navTitle',
           label: 'Personal Data',
-          icon: 'menu'
+          icon: 'perm_identity'
         },
         {
           type: 'navItem',
           label: 'Resume',
-          icon: 'move_to_inbox',
+          icon: 'file_present',
+          route: '/'
+        },
+        {
+          type: 'navTitle',
+          label: 'Hobbies',
+          icon: 'stars',
           route: '/'
         },
         {
           type: 'navItem',
-          label: 'Hobbies',
-          icon: 'move_to_inbox',
+          label: 'Art',
+          icon: 'brush',
+          route: '/'
+        },
+        {
+          type: 'navItem',
+          label: 'Aquarium',
+          icon: 'auto_awesome',
+          route: '/'
+        },
+        {
+          type: 'navItem',
+          label: '3D Printing',
+          icon: 'print',
           route: '/'
         },
         {
           type: 'navTitle',
           label: 'Projects Documentation',
-          icon: 'menu'
+          icon: 'widgets'
         },
         {
           type: 'navItem',
-          label: 'route A1',
-          icon: 'send',
+          label: 'Tank Filler',
+          icon: 'gradient',
           route: '/'
         },
         {
           type: 'navItem',
-          label: 'route A2',
-          icon: 'delete',
+          label: 'Money Monitor',
+          icon: 'bar_chart',
           route: '/'
         },
         {
           type: 'navItem',
-          label: 'route A2',
-          icon: 'delete',
+          label: 'Future Project',
+          icon: 'access_time',
           route: '/'
         }
       ],
