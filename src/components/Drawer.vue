@@ -28,8 +28,10 @@
               <md-list-item
                 disabled
                 :key="index + '_navItem'">
-                <md-icon>{{ item.icon }}</md-icon>
-                <span class="md-list-item-text">{{ item.label }} Group</span>
+                <div class="list-item-title">
+                  <md-icon class="title-icon">{{ item.icon }}</md-icon>
+                  <span v-show="menuVisible" class="title-label">{{ item.label }}</span>
+                </div>
               </md-list-item>
             </template>
 
@@ -56,40 +58,40 @@ export default {
   props: [],
   data: () => ({
       menuVisible: false,
-      navTitle: 'navigation',
+      navTitle: 'My Portfolio',
       navigations: [
         {
           type: 'navTitle',
-          label: 'Main Menu',
+          label: 'Personal Data',
           icon: 'menu'
         },
         {
           type: 'navItem',
-          label: 'route 1',
+          label: 'Resume',
           icon: 'move_to_inbox',
           route: '/'
         },
         {
           type: 'navItem',
-          label: 'route 2',
+          label: 'Hobbies',
           icon: 'move_to_inbox',
-          route: '/'
-        },
-        {
-          type: 'navItem',
-          label: 'route 3',
-          icon: 'send',
           route: '/'
         },
         {
           type: 'navTitle',
-          label: 'Secondary Menu',
+          label: 'Projects Documentation',
           icon: 'menu'
         },
         {
           type: 'navItem',
           label: 'route A1',
           icon: 'send',
+          route: '/'
+        },
+        {
+          type: 'navItem',
+          label: 'route A2',
+          icon: 'delete',
           route: '/'
         },
         {
@@ -113,6 +115,22 @@ export default {
     position: absolute;
     top: 0px;
     min-height: 100%;
+  }
+
+  .list-item-title {
+    color: rgb(189, 186, 186);
+    font-size: 13px;
+    .title-icon {
+      font-size: 15px !important;
+      color: inherit !important;
+    }
+    .title-label {
+      padding-left: 10px;
+    }
+  }
+
+  .md-list-item-text {
+    color: gray;
   }
 
   .nav-header {
