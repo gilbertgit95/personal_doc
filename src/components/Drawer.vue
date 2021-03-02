@@ -37,12 +37,46 @@
 
             <!-- if item is navigation -->
             <template v-else>
-              <md-list-item
-                :to="item.route"
-                :key="index + '_navItem'">
-                <md-icon>{{ item.icon }}</md-icon>
-                <span class="md-list-item-text">{{ item.label }}</span>
-              </md-list-item>
+              <!-- if contains subroutes -->
+              <template v-if="Boolean(item.subRoutes)">
+                <md-list-item
+                  md-expand
+                  :key="index + '_navItem'">
+                  <md-icon>{{ item.icon }}</md-icon>
+                  <span class="md-list-item-text">{{ item.label }}</span>
+
+                  <!-- subroutes -->
+                  <md-list slot="md-expand">
+                    <md-list-item
+                      class="md-inset"
+                      :class="{
+                        'active-nav': routesStatus[index].subRoutes[subIndex].isActive
+                      }"
+                      :title="item.label + ' -> ' + subItem.label"
+                      :key="item.label + subItem.label + subIndex"
+                      v-for="(subItem, subIndex) in item.subRoutes"
+                      @click="setSelectionIndex(index, subIndex)"
+                      :to="subItem.route">
+                      <span class="md-sublist-item-text">{{ subItem.label }}</span>
+                    </md-list-item>
+                  </md-list>
+                </md-list-item>
+              </template>
+
+              <!-- if no subroutes -->
+              <template v-else>
+                <md-list-item
+                  :to="item.route"
+                  :title="item.label"
+                  :class="{
+                    'active-nav': routesStatus[index].isActive
+                  }"
+                  @click="setSelectionIndex(index, null)"
+                  :key="index + '_navItem'">
+                  <md-icon>{{ item.icon }}</md-icon>
+                  <span class="md-list-item-text">{{ item.label }}</span>
+                </md-list-item>
+              </template>
             </template>
           </template>
 
@@ -57,6 +91,8 @@ export default {
   name: 'Drawer',
   props: [],
   data: () => ({
+      mainRouteSelectionIndex: null,
+      subRouteSelectionIndex: null,
       menuVisible: false,
       navTitle: 'My Portfolio',
       navigations: [
@@ -81,7 +117,16 @@ export default {
           type: 'navItem',
           label: 'Art',
           icon: 'brush',
-          route: '/'
+          subRoutes: [
+            {
+              label: 'Sketches',
+              route: '/'
+            },
+            {
+              label: 'Paints',
+              route: '/'
+            }
+          ]
         },
         {
           type: 'navItem',
@@ -104,25 +149,82 @@ export default {
           type: 'navItem',
           label: 'Tank Filler',
           icon: 'gradient',
-          route: '/'
+          subRoutes: [
+            {
+              label: 'Introduction',
+              route: '/'
+            },
+            {
+              label: 'Dependencies',
+              route: '/'
+            }
+          ]
         },
         {
           type: 'navItem',
           label: 'Money Monitor',
           icon: 'bar_chart',
-          route: '/'
+          subRoutes: [
+            {
+              label: 'Introduction',
+              route: '/'
+            },
+            {
+              label: 'Dependencies',
+              route: '/'
+            }
+          ]
         },
         {
           type: 'navItem',
           label: 'Future Project',
           icon: 'access_time',
-          route: '/'
+          subRoutes: [
+            {
+              label: 'Introduction',
+              route: '/'
+            },
+            {
+              label: 'Dependencies',
+              route: '/'
+            }
+          ]
         }
       ],
   }),
   methods: {
-    toggleMenu () {
+    toggleMenu() {
       this.menuVisible = !this.menuVisible
+    },
+
+    setSelectionIndex(mainIRouteIndex, subRouteIndex) {
+      this.mainRouteSelectionIndex = mainIRouteIndex
+      this.subRouteSelectionIndex = subRouteIndex
+    }
+  },
+
+  computed: {
+    routesStatus() {
+      let navs = this.navigations
+      let mainRouteSelection = this.mainRouteSelectionIndex
+      let subRouteSelection = this.subRouteSelectionIndex
+      let menuVisible = this.menuVisible
+
+      // for main routes
+      return navs.map((item, index) => {
+        let navsStatus = {
+          isActive: menuVisible && (index == mainRouteSelection),
+        }
+        // generate status for sub routes
+        if (item.subRoutes) {
+          navsStatus.subRoutes = item.subRoutes.map((subItem, subIndex) => {
+            return {
+              isActive: menuVisible && (index == mainRouteSelection) && (subIndex == subRouteSelection)
+            }
+          })
+        }
+        return navsStatus
+      })
     }
   }
 }
@@ -158,8 +260,18 @@ export default {
     }
   }
 
+  .active-nav {
+    background: #dee5f9;
+  }
+
   .md-list-item-text {
     color: #000;
+  }
+  .md-sublist-item-text {
+    color: #4a5573;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
   }
 
   .nav-header {
