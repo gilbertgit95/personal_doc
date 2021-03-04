@@ -1,17 +1,17 @@
 <template>
   <div class="drawer-wrapper">
     <md-app>
-      <md-app-drawer :md-active.sync="menuVisible" md-persistent="mini">
+      <md-app-drawer :md-active.sync="layout.drawerIsOpen" md-persistent="mini">
         <md-toolbar class="md-transparent drawer-header" md-elevation="0">
           <!-- optional navigation header -->
           <span
-            v-if="menuVisible"
+            v-if="layout.drawerIsOpen"
             class="nav-header">{{ navTitle }}</span>
 
           <!-- toggle -->
           <div class="md-toolbar-section-end">
             <md-button class="md-icon-button md-dense" @click="toggleMenu">
-              <md-icon class="drawer-header-icon" v-if="menuVisible">keyboard_arrow_left</md-icon>
+              <md-icon class="drawer-header-icon" v-if="layout.drawerIsOpen">keyboard_arrow_left</md-icon>
               <md-icon class="drawer-header-icon" v-else>keyboard_arrow_right</md-icon>
             </md-button>
           </div>
@@ -30,7 +30,7 @@
                 :key="index + '_navItem'">
                 <div class="list-item-title">
                   <md-icon class="title-icon">{{ item.icon }}</md-icon>
-                  <span v-show="menuVisible" class="title-label">{{ item.label }}</span>
+                  <span v-show="layout.drawerIsOpen" class="title-label">{{ item.label }}</span>
                 </div>
               </md-list-item>
             </template>
@@ -93,7 +93,7 @@ export default {
   data: () => ({
       mainRouteSelectionIndex: null,
       subRouteSelectionIndex: null,
-      menuVisible: false,
+      // menuVisible: false,
       navTitle: 'My Portfolio',
       navigations: [
         {
@@ -194,7 +194,7 @@ export default {
   }),
   methods: {
     toggleMenu() {
-      this.menuVisible = !this.menuVisible
+      this.$store.commit('toggleDrawer')
     },
 
     setSelectionIndex(mainIRouteIndex, subRouteIndex) {
@@ -204,11 +204,14 @@ export default {
   },
 
   computed: {
+    layout() {
+      return this.$store.getters.layout
+    },
     routesStatus() {
       let navs = this.navigations
       let mainRouteSelection = this.mainRouteSelectionIndex
       let subRouteSelection = this.subRouteSelectionIndex
-      let menuVisible = this.menuVisible
+      let menuVisible = this.layout.drawerIsOpen
 
       // for main routes
       return navs.map((item, index) => {
