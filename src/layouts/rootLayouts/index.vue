@@ -7,7 +7,7 @@
 
     <!-- drawer section -->
     <div v-if="this.$store.getters.layout.drawer">
-      <Drawer />
+      <Drawer :nav-title="navTitle" :navigations="navigations" />
     </div>
 
     <!-- the children routes view -->
@@ -22,10 +22,17 @@
 
 <script>
 import Drawer from '@/components/Drawer'
+import DrawerConsts from '@/constants/root/drawer'
 
 export default {
   name: 'RootLayout',
   props: {},
+  data() {
+    return {
+      navTitle: DrawerConsts.navTitle,
+      navigations: DrawerConsts.navigations
+    }
+  },
   components: {Drawer},
   // when a component is created
   // set all nessesary settings
@@ -34,7 +41,7 @@ export default {
     this.$store.commit('setActiveLayout', 'rootLayout')
 
     // set drawer status
-    this.$store.commit('setDrawer', false)
+    this.$store.commit('setDrawer', true)
 
     // set layout visible sections
     this.$store.commit('setlayout', {
