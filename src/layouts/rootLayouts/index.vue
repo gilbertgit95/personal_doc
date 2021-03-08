@@ -11,7 +11,12 @@
     </div>
 
     <!-- the children routes view -->
-    <router-view></router-view>
+    <div>
+      <div></div>
+      <div>
+        <router-view></router-view>
+      </div>
+    </div>
 
     <!-- footer section -->
     <div v-if="this.$store.getters.layout.footer">
