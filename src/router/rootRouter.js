@@ -1,15 +1,15 @@
 import RootLayout from '@/layouts/rootLayouts'
-import Portfolio from '@/modules/root/Portfolio'
+import AboutMe from '@/modules/root/AboutMe'
 
 export default [{
     path: '/',
-    redirect: '/portfolio',
+    redirect: '/aboutMe',
     component: RootLayout,
     children: [
         {
-            path: "portfolio",
-            name: "Portfolio",
-            component: Portfolio,
+            path: "aboutMe",
+            name: "About Me",
+            component: AboutMe,
         }
     ]
 }]

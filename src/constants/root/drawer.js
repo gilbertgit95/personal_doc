@@ -8,13 +8,13 @@ export default {
     },
     {
         type: 'navItem',
-        label: 'Resume',
+        label: 'About Me',
         icon: 'text_snippet',
         route: '/'
     },
     {
         type: 'navTitle',
-        label: 'Hobbies',
+        label: 'Hobbies and Interests',
         icon: 'stars',
         route: '/'
     },
