@@ -11,11 +11,8 @@
     </div>
 
     <!-- the children routes view -->
-    <div>
-      <div></div>
-      <div>
+    <div class="main-router-view" :class="this.$store.getters.layout.drawerIsOpen? 'small': 'big'">
         <router-view></router-view>
-      </div>
     </div>
 
     <!-- footer section -->
@@ -58,5 +55,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .main-router-view {
+    &.small {
+      padding-left: 230px;
+    }
+    &.big {
+      padding-left: 70px;
+    }
+  }
 </style>
