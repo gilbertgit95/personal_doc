@@ -1,6 +1,8 @@
 <template>
     <div class="about-me-wrapper">
-        About me
+        <div class="about-me-content">
+            About me
+        </div>
     </div>
 </template>
 
@@ -108,4 +110,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .about-me-content {
+        border: 1px solid;
+        width: 80%;
+        margin: auto;
+    }
 </style>
