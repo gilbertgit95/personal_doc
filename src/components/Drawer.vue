@@ -174,14 +174,14 @@ export default {
   }
 
   .active-nav {
-    background: #dee5f9;
+    background: #348a57;
   }
 
   .md-list-item-text {
     color: #000;
   }
   .md-sublist-item-text {
-    color: #4a5573;
+    color: #fff;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -199,6 +199,7 @@ export default {
 
   .md-drawer.md-persistent-mini {
     transform: translate3D(0,0,0);
+    position: fixed;
   }
 
    // Demo purposes only

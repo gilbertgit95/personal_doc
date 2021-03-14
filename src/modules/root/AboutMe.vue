@@ -210,11 +210,10 @@ export default {
         .about-me-content {
             width: 80%;
             margin: auto;
+            padding: 10px;
             padding-top: 30px;
             min-width: 500px;
             max-width: 700px;
-            overflow: auto;
-            min-height: 100%;
 
             .md-avatar.md-large {
                 min-width: 100px;
