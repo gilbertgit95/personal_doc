@@ -56,12 +56,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .main-router-view {
-    &.small {
-      padding-left: 230px;
-    }
-    &.big {
-      padding-left: 70px;
+  .root-layout-wrapper {
+    background: #fff;
+
+    .main-router-view {
+      &.small {
+        padding-left: 230px;
+      }
+      &.big {
+        padding-left: 70px;
+      }
     }
   }
 </style>

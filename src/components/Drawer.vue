@@ -142,19 +142,27 @@ export default {
     min-height: 100%;
   }
 
+  .md-app-drawer {
+    background: #62ad89;
+  }
+
+  .md-list {
+    background: transparent;
+  }
+
   .md-app-side-drawer {
     box-shadow: 2px 0px 7px 3px rgb(0 0 0 / 13%)!important;
-    .drawer-header {
-      background: #4a5573;
-      color: #fff;
-      .drawer-header-icon {
-        color: #fff;
-      }
-    }
+    // .drawer-header {
+    //   background: #4a5573;
+    //   color: #fff;
+    //   .drawer-header-icon {
+    //     color: #fff;
+    //   }
+    // }
   }
 
   .list-item-title {
-    color: rgb(189, 186, 186);
+    color: #aef7d2;
     font-size: 13px;
     .title-icon {
       font-size: 15px !important;

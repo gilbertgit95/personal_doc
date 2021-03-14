@@ -16,7 +16,7 @@ export default {
         type: 'navTitle',
         label: 'Hobbies and Interests',
         icon: 'stars',
-        route: '/'
+        route: '/onprogress'
     },
     {
         type: 'navItem',
@@ -25,11 +25,11 @@ export default {
         subRoutes: [
         {
             label: 'Sketches',
-            route: '/'
+            route: '/onprogress'
         },
         {
             label: 'Paints',
-            route: '/'
+            route: '/onprogress'
         }
         ]
     },
@@ -37,13 +37,13 @@ export default {
         type: 'navItem',
         label: 'Pets',
         icon: 'pets',
-        route: '/'
+        route: '/onprogress'
     },
     {
         type: 'navItem',
         label: '3D Printing',
         icon: 'auto_awesome',
-        route: '/'
+        route: '/onprogress'
     },
     {
         type: 'navTitle',
@@ -57,11 +57,11 @@ export default {
         subRoutes: [
         {
             label: 'Introduction',
-            route: '/'
+            route: '/onprogress'
         },
         {
             label: 'Dependencies',
-            route: '/'
+            route: '/onprogress'
         }
         ]
     },
@@ -72,11 +72,11 @@ export default {
         subRoutes: [
         {
             label: 'Introduction',
-            route: '/'
+            route: '/onprogress'
         },
         {
             label: 'Dependencies',
-            route: '/'
+            route: '/onprogress'
         }
         ]
     },
@@ -87,11 +87,11 @@ export default {
         subRoutes: [
         {
             label: 'Introduction',
-            route: '/'
+            route: '/onprogress'
         },
         {
             label: 'Dependencies',
-            route: '/'
+            route: '/onprogress'
         }
         ]
     }
