@@ -25,11 +25,11 @@ export default {
         subRoutes: [
         {
             label: 'Sketches',
-            route: '/onprogress'
+            route: '/art'
         },
         {
             label: 'Paints',
-            route: '/onprogress'
+            route: '/art'
         }
         ]
     },
