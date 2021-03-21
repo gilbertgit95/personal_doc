@@ -2,8 +2,11 @@
     "sketches": [
         {
             "title": "",
+            "desc": "",
+            "date": "",
             "artist": "",
             "photos": [
+                "/files/root/interests/art/sketches.jpg",
                 "/files/root/interests/art/sketches.jpg"
             ]
         }
