@@ -13,6 +13,6 @@ export default {
 
 <style lang="scss">
     .art-layout-wrapper {
-        
+        padding: 10px;
     }
 </style>
