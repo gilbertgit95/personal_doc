@@ -23,14 +23,14 @@ export default {
         label: 'Art',
         icon: 'brush',
         subRoutes: [
-        {
-            label: 'Sketches',
-            route: '/art'
-        },
-        {
-            label: 'Paints',
-            route: '/art'
-        }
+            {
+                label: 'Sketches',
+                route: '/art/sketches'
+            },
+            {
+                label: 'Paints',
+                route: '/art/paints'
+            }
         ]
     },
     {
@@ -70,14 +70,14 @@ export default {
         label: 'Money Monitor',
         icon: 'bar_chart',
         subRoutes: [
-        {
-            label: 'Introduction',
-            route: '/onprogress'
-        },
-        {
-            label: 'Dependencies',
-            route: '/onprogress'
-        }
+            {
+                label: 'Introduction',
+                route: '/onprogress'
+            },
+            {
+                label: 'Dependencies',
+                route: '/onprogress'
+            }
         ]
     },
     {
@@ -85,14 +85,14 @@ export default {
         label: 'Future Project',
         icon: 'access_time',
         subRoutes: [
-        {
-            label: 'Introduction',
-            route: '/onprogress'
-        },
-        {
-            label: 'Dependencies',
-            route: '/onprogress'
-        }
+            {
+                label: 'Introduction',
+                route: '/onprogress'
+            },
+            {
+                label: 'Dependencies',
+                route: '/onprogress'
+            }
         ]
     }
     ]

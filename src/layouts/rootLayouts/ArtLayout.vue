@@ -1,5 +1,9 @@
 <template>
-    <div class="art-layout-wrapper">Art Layout</div>
+    <div class="art-layout-wrapper">
+        <div>Art Layout</div>
+
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>

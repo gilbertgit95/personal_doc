@@ -1,13 +1,43 @@
 {
     "sketches": [
         {
-            "title": "",
-            "desc": "",
-            "date": "",
-            "artist": "",
+            "title": "Title One",
+            "date": "Oct, 2015",
+            "formatedDate": "2015-10",
+            "artist": "Gilbert DC.",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
             "photos": [
-                "/files/root/interests/art/sketches.jpg",
-                "/files/root/interests/art/sketches.jpg"
+                "/files/root/interests/art/sketches/late_nanay_lina.jpg"
+            ]
+        },
+        {
+            "title": "Title Two",
+            "date": "Oct, 2017",
+            "formatedDate": "2017-10",
+            "artist": "Gilbert DC.",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+            "photos": [
+                "/files/root/interests/art/sketches/traffic_feelings.jpg"
+            ]
+        },
+        {
+            "title": "Title Three",
+            "date": "Oct, 2018",
+            "formatedDate": "2018-10",
+            "artist": "Gilbert DC.",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+            "photos": [
+                "/files/root/interests/art/sketches/fucos_optical_illusion.jpg"
+            ]
+        },
+        {
+            "title": "Title Four",
+            "date": "Oct, 2020",
+            "formatedDate": "2020-10",
+            "artist": "Gilbert DC.",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+            "photos": [
+                "/files/root/interests/art/sketches/wfh_feels_like.jpg"
             ]
         }
     ]
