@@ -55,7 +55,6 @@
                       :title="item.label + ' -> ' + subItem.label"
                       :key="item.label + subItem.label + subIndex"
                       v-for="(subItem, subIndex) in item.subRoutes"
-                      @click="setSelectionIndex(index, subIndex)"
                       :to="subItem.route">
                       <span class="md-sublist-item-text">{{ subItem.label }}</span>
                     </md-list-item>
@@ -71,7 +70,6 @@
                   :class="{
                     'active-nav': routesStatus[index].isActive
                   }"
-                  @click="setSelectionIndex(index, null)"
                   :key="index + '_navItem'">
                   <md-icon>{{ item.icon }}</md-icon>
                   <span class="md-list-item-text">{{ item.label }}</span>
@@ -90,18 +88,10 @@
 export default {
   name: 'Drawer',
   props: ['navTitle', 'navigations'],
-  data: () => ({
-      mainRouteSelectionIndex: null,
-      subRouteSelectionIndex: null
-  }),
+  data: () => ({}),
   methods: {
     toggleMenu() {
       this.$store.commit('toggleDrawer')
-    },
-
-    setSelectionIndex(mainIRouteIndex, subRouteIndex) {
-      this.mainRouteSelectionIndex = mainIRouteIndex
-      this.subRouteSelectionIndex = subRouteIndex
     }
   },
 
@@ -111,20 +101,18 @@ export default {
     },
     routesStatus() {
       let navs = this.navigations
-      let mainRouteSelection = this.mainRouteSelectionIndex
-      let subRouteSelection = this.subRouteSelectionIndex
-      let menuVisible = this.layout.drawerIsOpen
+      let currRoute = this.$route.path
 
       // for main routes
-      return navs.map((item, index) => {
+      return navs.map((item) => {
         let navsStatus = {
-          isActive: menuVisible && (index == mainRouteSelection),
+          isActive: item.route && item.route == currRoute,
         }
         // generate status for sub routes
         if (item.subRoutes) {
-          navsStatus.subRoutes = item.subRoutes.map((subItem, subIndex) => {
+          navsStatus.subRoutes = item.subRoutes.map((subItem) => {
             return {
-              isActive: menuVisible && (index == mainRouteSelection) && (subIndex == subRouteSelection)
+              isActive: subItem.route && subItem.route == currRoute
             }
           })
         }

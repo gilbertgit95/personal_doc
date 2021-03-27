@@ -10,7 +10,7 @@ export default {
         type: 'navItem',
         label: 'About Me',
         icon: 'text_snippet',
-        route: '/'
+        route: '/aboutMe'
     },
     {
         type: 'navTitle',
