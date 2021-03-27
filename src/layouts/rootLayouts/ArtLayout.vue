@@ -1,6 +1,6 @@
 <template>
     <div class="art-layout-wrapper">
-        <div>Art Layout</div>
+        <div></div>
 
         <router-view></router-view>
     </div>

@@ -1,30 +1,31 @@
 <template>
     <div class="sketches-wrapper">
         <div v-if="Boolean(sketches)">
-            <div
-                class="sketch"
-                :key="'sketch_' + sketchIndex"
-                v-for="(sketch, sketchIndex) in sketches">
-                <div
-                    v-if="!isEven(sketchIndex)"
-                    class="images">
-                    <img
-                        width="400"
-                        v-if="sketch && sketch.photos && sketch.photos[0]"
-                        :src="sketch.photos[0]" />
+            <template v-for="(sketch, sketchIndex) in sketches">
+                <div class="md-layout md-gutter sketch"
+                    :key="'sketch_' + sketchIndex">
+                    <div class="md-layout-item md-medium-size-50 md-xsmall-size-100">
+                        <div class="desc">
+                            <div class="md-title">{{ sketch.title }}</div>
+                            <div class="md-md-body-1">{{ sketch.desc }}</div>
+
+                            <div class="sketch-footer">
+                                <div class="md-md-caption">Date: {{ sketch.date }}</div>
+                                <div class="md-md-caption">Artist: {{ sketch.artist }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md-layout-item md-medium-size-50 md-xsmall-size-100">
+                        <div class="images">
+                            <img
+                                width="400"
+                                v-if="sketch && sketch.photos && sketch.photos[0]"
+                                :src="sketch.photos[0]" />
+                        </div>
+                    </div>
                 </div>
-                <div class="desc">
-                    {{ sketch.desc }}
-                </div>
-                <div
-                    v-if="isEven(sketchIndex)"
-                    class="images">
-                    <img
-                        width="400"
-                        v-if="sketch && sketch.photos && sketch.photos[0]"
-                        :src="sketch.photos[0]" />
-                </div>
-            </div>
+                <md-divider :key="'sketch-divider-' + sketchIndex" class="sketch-divider"></md-divider>
+            </template>
         </div>
     </div>
 </template>
@@ -74,21 +75,28 @@ export default {
     .sketches-wrapper {
         .sketch {
             margin: auto;
-            margin-bottom: 50px;
-            width: 800px;
-            position: relative;
-
+            margin-bottom: 25px;
+            margin-top: 25px;
+            max-width: 800px;
             .desc {
-                width: 50%;
-                display: inline-block;
                 padding: 5px;
+                >div {
+                    margin-bottom: 15px;
+                }
             }
 
             .images {
-                width: 50%;
-                display: inline-block;
                 padding: 5px;
             }
+
+            .sketch-footer{
+                color: rgb(61, 155, 155);
+            }
+        }
+
+        .sketch-divider {
+            margin: auto;
+            max-width: 800px;
         }
     }
 </style>
