@@ -2,6 +2,7 @@
     <div class="sketches-wrapper">
         <div v-if="Boolean(sketches)">
             <template v-for="(sketch, sketchIndex) in sketches">
+                <md-divider :key="'sketch-divider-' + sketchIndex" class="sketch-divider"></md-divider>
                 <div class="md-layout md-gutter sketch"
                     :key="'sketch_' + sketchIndex">
                     <div class="md-layout-item md-medium-size-50 md-xsmall-size-100">
@@ -24,7 +25,6 @@
                         </div>
                     </div>
                 </div>
-                <md-divider :key="'sketch-divider-' + sketchIndex" class="sketch-divider"></md-divider>
             </template>
         </div>
     </div>

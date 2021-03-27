@@ -84,16 +84,7 @@ export default {
         type: 'navItem',
         label: 'Future Project',
         icon: 'access_time',
-        subRoutes: [
-            {
-                label: 'Introduction',
-                route: '/onprogress'
-            },
-            {
-                label: 'Dependencies',
-                route: '/onprogress'
-            }
-        ]
+        route: '/onprogress'
     }
     ]
 }

@@ -2,14 +2,16 @@
     <div class="about-me-wrapper" @click="closeDrawer()">
         <div class="about-me-content" v-if="info">
             <md-content style="display: flex;">
-                <div style="width: 120px; display: inline-block; float: left;">
-                    <md-avatar class="md-large">
-                        <img :src="info.header.profilePic" alt="My profile Picture">
-                    </md-avatar>
-                </div>
-                <div style="width: 70%; display: inline-block; padding-top: 20px;">
-                    <div class="md-display-1" style="color: #333;">{{ info.header.fullname }}</div>
-                    <div class="md-headline">{{ info.header.workDesc }}</div>
+                <div class="md-layout md-gutter md-alignment-center">
+                    <div class="md-layout-item md-large-size-20 md-medium-size-20 md-small-size-hide md-xsmall-hide">
+                        <md-avatar class="md-large">
+                            <img :src="info.header.profilePic" alt="My profile Picture">
+                        </md-avatar>
+                    </div>
+                    <div class="md-layout-item md-large-size-80 md-medium-size-80 md-small-size-80 md-xsmall-size-100">
+                        <div class="md-display-1" style="color: #333;">{{ info.header.fullname }}</div>
+                        <div class="md-headline">{{ info.header.workDesc }}</div>
+                    </div>
                 </div>
             </md-content>
             <md-content style="padding-top: 10px;padding-bottom: 40px;">
@@ -216,9 +218,9 @@ export default {
             max-width: 700px;
 
             .md-avatar.md-large {
-                min-width: 100px;
-                min-height: 100px;
-                border-radius: 100px;
+                min-width: 80px;
+                min-height: 80px;
+                border-radius: 80px;
                 font-size: 32px;
             }
 
