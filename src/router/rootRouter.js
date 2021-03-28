@@ -3,6 +3,7 @@ import ArtLayout from '@/layouts/rootLayouts/ArtLayout'
 
 import AboutMe from '@/modules/root/AboutMe'
 import Sketches from '@/modules/root/Sketches'
+import Paintings from '@/modules/root/Paintings'
 
 import OnProgress from '@/components/OnProgress'
 
@@ -19,7 +20,7 @@ export default [{
         {
             path: "art",
             name: "Art",
-            // redirect: "art/sketches",
+            redirect: "art/sketches",
             component: ArtLayout,
             children: [
                 {
@@ -27,6 +28,11 @@ export default [{
                     name: "Sketches",
                     component: Sketches,
                 },
+                {
+                    path: "paintings",
+                    name: "Paintings",
+                    component: Paintings,
+                }
             ]
         },
         {

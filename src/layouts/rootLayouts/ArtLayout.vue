@@ -1,16 +1,18 @@
 <template>
     <div class="art-layout-wrapper">
         <div class="content">
-            <div class="md-display-1">
-                Sketches Exhibit
+            <div class="md-display-1" style="margin-bottom: 10px;">
+                Art Exhibit
             </div>
-            <div class="md-caption">
-                This are sketches I did not lost so far. The theme are mostly triggered bai emotion at
+            <div class="md-body-1">
+                This are the portraits I did not lost so far. The theme are mostly based on emotion and real events at
                 the time of creation. Thank you for visiting the page, hope you enjoy my way of portraying things.
             </div>
         </div>
 
-        <router-view></router-view>
+        <transition name="fade" mode="out-in">
+          <router-view></router-view>
+        </transition>
     </div>
 </template>
 
@@ -24,6 +26,8 @@ export default {
 </script>
 
 <style lang="scss">
+    $color: rgb(61, 155, 155);
+
     .art-layout-wrapper {
         padding: 10px;
 
@@ -32,6 +36,10 @@ export default {
             margin: auto;
             margin-top: 20px;
             margin-bottom: 50px;
+
+            .md-display-1 {
+                color: $color;
+            }
         }
     }
 </style>

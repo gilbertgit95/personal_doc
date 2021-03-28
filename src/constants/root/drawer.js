@@ -29,7 +29,7 @@ export default {
             },
             {
                 label: 'Paints',
-                route: '/art/paints'
+                route: '/art/paintings'
             }
         ]
     },
