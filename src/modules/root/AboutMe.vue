@@ -1,14 +1,14 @@
 <template>
     <div class="about-me-wrapper" @click="closeDrawer()">
         <div class="about-me-content" v-if="info">
-            <md-content style="display: flex;">
+            <md-content>
                 <div class="md-layout md-gutter md-alignment-center">
-                    <div class="md-layout-item md-large-size-20 md-medium-size-20 md-small-size-hide md-xsmall-hide">
+                    <div class="md-layout-item md-xlarge-size-20 md-large-size-20 md-medium-size-20 md-small-size-hide md-xsmall-hide">
                         <md-avatar class="md-large">
                             <img :src="info.header.profilePic" alt="My profile Picture">
                         </md-avatar>
                     </div>
-                    <div class="md-layout-item md-large-size-80 md-medium-size-80 md-small-size-80 md-xsmall-size-100">
+                    <div class="md-layout-item md-xlarge-size-80 md-large-size-80 md-medium-size-80 md-small-size-80 md-xsmall-size-100">
                         <div class="md-display-1" style="color: #333;">{{ info.header.fullname }}</div>
                         <div class="md-headline">{{ info.header.workDesc }}</div>
                     </div>
@@ -236,7 +236,7 @@ export default {
                 }
 
                 .content-section-body {
-                    padding-left: 100px;
+                    padding-left: 50px;
 
                     .text-content {
                         font-size: 16px;
