@@ -5,8 +5,8 @@
                 Art Exhibit
             </div>
             <div class="md-body-1">
-                This are the portraits I did not lost so far. The theme are mostly based on emotion and real events at
-                the time of creation. Thank you for visiting the page, hope you enjoy my way of portraying things.
+                This are the portraits I haven't lost so far. The theme are mostly based on emotion and real events at
+                the time of creation. Thank you for visiting the page, hope you enjoy the artworks.
             </div>
         </div>
 
