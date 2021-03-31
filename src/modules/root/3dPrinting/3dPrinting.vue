@@ -1,7 +1,7 @@
 <template>
     <div class="Ed-printing-wrapper">
         <div class="Ed-printing-content">
- 
+            3d Printing content
         </div>
     </div>
 </template>

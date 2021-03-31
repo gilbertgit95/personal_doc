@@ -1,7 +1,7 @@
 <template>
     <div class="pets-wrapper">
         <div class="pets-content">
-            Pets
+            Pets Content
         </div>
     </div>
 </template>
