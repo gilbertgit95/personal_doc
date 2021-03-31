@@ -1,9 +1,9 @@
 import RootLayout from '@/layouts/rootLayouts/indexLayout'
 import ArtLayout from '@/layouts/rootLayouts/ArtLayout'
 
-import AboutMe from '@/modules/root/AboutMe'
-import Sketches from '@/modules/root/Sketches'
-import Paintings from '@/modules/root/Paintings'
+import AboutMe from '@/modules/root/aboutMe/AboutMe'
+import Sketches from '@/modules/root/art/Sketches'
+import Paintings from '@/modules/root/art/Paintings'
 
 import OnProgress from '@/components/OnProgress'
 
