@@ -1,6 +1,6 @@
 <template>
     <div class="money-monitor-intro-wrapper">
-        <div class="md-headline money-monitor-intro-divider title-heading" style="margin-bottom: 10px;">Intro</div>
+        <div class="md-headline money-monitor-intro-divider title-heading" style="margin-bottom: 10px;">Money Monitor Intro</div>
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <div class="tank-filler-intro-wrapper">
-        <div class="md-headline tank-filler-intro-divider title-heading" style="margin-bottom: 10px;">Intro</div>
+        <div class="md-headline tank-filler-intro-divider title-heading" style="margin-bottom: 10px;">Tank Filler Intro</div>
     </div>
 </template>
 
